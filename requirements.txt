@@ -1,0 +1,6 @@
+flask==2.3.3
+ultralytics==8.0.196
+werkzeug==2.3.7
+matplotlib==3.8.2
+seaborn==0.13.0
+numpy==1.26.2 

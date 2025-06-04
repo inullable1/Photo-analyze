@@ -1,0 +1,162 @@
+/* Общие стили */
+body {
+	background-color: #f8f9fa;
+}
+
+/* Стили для зоны загрузки */
+.drop-zone {
+	border: 2px dashed #dee2e6;
+	border-radius: 8px;
+	padding: 2rem;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background-color: white;
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+	border-color: #0d6efd;
+	background-color: #f8f9fa;
+}
+
+.drop-zone-text {
+	color: #6c757d;
+}
+
+.drop-zone-text i {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+/* Стили для бейджей классов */
+.classes-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	max-height: 200px;
+	overflow-y: auto;
+	padding: 0.5rem;
+	background-color: #f8f9fa;
+	border-radius: 8px;
+}
+
+.class-badge {
+	padding: 0.4rem 0.8rem;
+	background-color: #e9ecef;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 0.9rem;
+	white-space: nowrap;
+	border: 1px solid #dee2e6;
+}
+
+.class-badge:hover {
+	background-color: #dee2e6;
+	transform: translateY(-1px);
+}
+
+.class-badge.active {
+	background-color: #0d6efd;
+	color: white;
+	border-color: #0d6efd;
+}
+
+/* Стилизация скроллбара для контейнера классов */
+.classes-container::-webkit-scrollbar {
+	width: 8px;
+}
+
+.classes-container::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 4px;
+}
+
+.classes-container::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 4px;
+}
+
+.classes-container::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+/* Стили для карточек предсказаний */
+.prediction-card {
+	margin-bottom: 1rem;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.prediction-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prediction-card.active {
+	border-color: #0d6efd;
+	background-color: #f8f9fa;
+}
+
+/* Стили для контейнера изображений */
+.image-container {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+/* Стили для рамок объектов */
+.bounding-box {
+	position: absolute;
+	border: 2px solid #0d6efd;
+	background-color: rgba(13, 110, 253, 0.1);
+	pointer-events: none;
+}
+
+/* Стили для индикатора загрузки */
+.loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.8);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+/* Стили для секций */
+.upload-section,
+.results-section,
+.analysis-section {
+	background-color: white;
+	border-radius: 8px;
+	padding: 1.5rem;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.statistics-section {
+	background-color: white;
+	border-radius: 8px;
+	padding: 1.5rem;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+	.col-md-5,
+	.col-md-7 {
+		margin-bottom: 2rem;
+	}
+
+	.drop-zone {
+		padding: 1rem;
+	}
+
+	.class-badge {
+		font-size: 0.8rem;
+		padding: 0.4rem 0.8rem;
+	}
+}
