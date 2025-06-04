@@ -12,8 +12,8 @@
 1. Клонируйте репозиторий:
 
 ```bash
-git clone <url-репозитория>
-cd <название-папки>
+git clone https://github.com/inullable1/Photo-analyze
+cd Photo-analyze
 ```
 
 2. Создайте виртуальное окружение:
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 5. Скачайте модель YOLO:
 
 ```bash
-# Модель будет автоматически загружена при первом запуске приложения
+# [Модель будет автоматически загружена при первом запуске приложения](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt) и переместите файл в корень проекта.
 ```
 
 ## Запуск приложения
