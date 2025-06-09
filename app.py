@@ -6,15 +6,23 @@ import traceback
 from werkzeug.utils import secure_filename
 import torch
 from ultralytics.nn.tasks import DetectionModel
+from torch.nn.modules.container import Sequential
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 import io
 import base64
 import shutil
+from functools import partial
 
+# Настройка логирования
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+
+# Исправление загрузки весов PyTorch
+original_torch_load = torch.load
+torch.load = partial(original_torch_load, weights_only=False)
+torch.serialization.add_safe_globals([DetectionModel, Sequential])
 
 # Словарь для перевода классов
 CLASS_TRANSLATIONS = {
@@ -104,7 +112,7 @@ def translate_class(class_id):
     """Переводит числовой ID класса в русское название"""
     return CLASS_TRANSLATIONS.get(int(class_id), f"Класс {class_id}")
 
-torch.serialization.add_safe_globals([DetectionModel])
+torch.serialization.add_safe_globals([DetectionModel, torch.nn.modules.container.Sequential])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'

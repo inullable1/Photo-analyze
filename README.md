@@ -45,7 +45,7 @@ pip install -r requirements.txt
 5. Скачайте модель YOLO:
 
 ```bash
-# [Модель будет автоматически загружена при первом запуске приложения](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt) и переместите файл в корень проекта.
+# https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt и переместите файл в корень проекта.
 ```
 
 ## Запуск приложения
@@ -58,11 +58,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-3. Откройте веб-браузер и перейдите по адресу:
-
-```
-http://localhost:5000
-```
+3. Откройте веб-браузер и перейдите по адресу который указан в терминале
 
 ## Использование
 
